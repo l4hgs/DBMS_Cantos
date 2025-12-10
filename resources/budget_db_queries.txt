@@ -1,0 +1,39 @@
+CREATE DATABASE budget_db;
+USE budget_db;
+
+CREATE TABLE category (
+    category_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+INSERT INTO category (name) VALUES
+('Food'),
+('Transportation'),
+('Bills'),
+('Entertainment'),
+('Salary'),
+('Allowance'),
+('Savings');
+
+CREATE TABLE transaction (
+    trans_id INT AUTO_INCREMENT PRIMARY KEY,
+    type ENUM('income', 'expense') NOT NULL,
+    category_id INT NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    trans_date DATE NOT NULL,
+    note VARCHAR(255),
+
+    FOREIGN KEY (category_id) REFERENCES category(category_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+-- Sample transactions
+INSERT INTO transaction (type, category_id, amount, trans_date, note) VALUES
+('income', 5, 50000.00, '2025-12-01', 'Monthly salary'),
+('income', 6, 1500.00, '2025-12-02', 'Weekly allowance'),
+('expense', 1, 1200.50, '2025-12-03', 'Grocery shopping'),
+('expense', 2, 450.00, '2025-12-04', 'Gas for commute'),
+('expense', 3, 3200.75, '2025-12-05', 'Electricity and water bills'),
+('expense', 4, 800.00, '2025-12-06', 'Movie and snacks');
+
