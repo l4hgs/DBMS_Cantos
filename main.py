@@ -10,7 +10,7 @@ from category_dao import get_all_categories, add_category, delete_category
 class BudgetApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Budget Tracker")
+        self.root.title("Budge-It Budget Tracker")
         self.root.geometry("1000x600")
         self.root.configure(bg="white")
 
@@ -32,7 +32,7 @@ class BudgetApp:
         self.sidebar.pack(side="left", fill="y")
 
         tk.Label(
-            self.sidebar, text="Budget Tracker", bg=self.sidebar_bg, fg="#212529",
+            self.sidebar, text="Budge-It", bg=self.sidebar_bg, fg="#212529",
             font=("SF Pro Text", 20, "bold")
         ).pack(pady=(0, 20))
 
@@ -97,12 +97,9 @@ class BudgetApp:
 
         create_card(card_frame, "Total Income", total_income, "#2E8B57")
         create_card(card_frame, "Total Expense", total_expense, "#C0392B")
-        balance_color = "#2E8B57" if balance >= 0 else "#C0392B"
+        balance_color = "#000000" if balance >= 0 else "#C0392B"
         create_card(card_frame, "Balance", balance, balance_color)
 
-        tk.Label(self.content, text="(Charts coming soon...)",
-                 font=("SF Pro Text", 14, "italic"),
-                 bg=self.main_bg, fg="#6C757D").pack(pady=20)
 
     # ------------------------------------------------------------------
     # ADD TRANSACTION
