@@ -40,7 +40,7 @@ The system uses two main tables with a **one-to-many** relationship.
 
 This structure keeps the database clean, scalable, and free from duplicate data.
 
-📌 *Insert your actual ERD diagram here.*
+![Budget Database ERD](resources/budget_dbERD.png)
 
 ---
 
@@ -57,7 +57,10 @@ It includes:
 
 The system follows **event-driven programming**, allowing smooth and interactive user experiences.
 
-📌 *Insert GUI screenshots here.*
+![Budget_Database_GUI](resources/gui1.png)
+![Budget_Database_GUI](resources/gui2.png)
+![Budget_Database_GUI](resources/gui3.png)
+![Budget_Database_GUI](resources/gui4.png)
 
 ---
 
